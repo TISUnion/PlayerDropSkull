@@ -14,13 +14,13 @@ def on_death_message(server, message):
 		x, y, z = api.getPlayerInfo(server, player, path='Pos')
 		dim = api.getPlayerInfo(server, player, path='Dimension')
 		dim_mapping = {
-            0: 'minecraft:overworld',
-            -1: 'minecraft:the_nether',
-            1: 'minecraft:the_end',
-            'minecraft:overworld': 'minecraft:overworld',
-            'minecraft:the_nether': 'minecraft:the_nether',
-            'minecraft:the_end': 'minecraft:the_end'
-        }
+			0: 'minecraft:overworld',
+			-1: 'minecraft:the_nether',
+			1: 'minecraft:the_end',
+			'minecraft:overworld': 'minecraft:overworld',
+			'minecraft:the_nether': 'minecraft:the_nether',
+			'minecraft:the_end': 'minecraft:the_end'
+        	}
 		prefix = 'execute in {} run '.format(dim_mapping[dim])
 		nbt = json.dumps({
 			'Item': {
